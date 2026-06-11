@@ -1,0 +1,57 @@
+### Listar empleados
+GET http://127.0.0.1:8002/empleados
+
+### Ver empleado por ID
+GET http://127.0.0.1:8002/empleado/1
+
+### Buscar por documento
+GET http://127.0.0.1:8002/empleados/documento/1000123456
+
+### Buscar por area
+GET http://127.0.0.1:8002/empleados/area/Tecnologia
+
+### Buscar por estado
+GET http://127.0.0.1:8002/empleados/estado/activo
+
+### Crear empleado
+POST http://127.0.0.1:8002/empleado
+Content-Type: application/json
+
+{
+    "nombres": "Pedro",
+    "apellidos": "Gomez",
+    "documento": "1000999888",
+    "correo": "pedro@empresa.com",
+    "telefono": "3001112233",
+    "cargo": "Desarrollador",
+    "area": "Tecnologia",
+    "fecha_ingreso": "2026-06-01",
+    "estado": "activo"
+}
+
+### Modificar empleado
+PUT http://127.0.0.1:8002/empleado/1
+Content-Type: application/json
+
+{
+    "nombres": "Carlos",
+    "apellidos": "Ramirez",
+    "documento": "1000123456",
+    "correo": "carlos@empresa.com",
+    "telefono": "3001234567",
+    "cargo": "Analista Senior",
+    "area": "Tecnologia",
+    "fecha_ingreso": "2024-01-15",
+    "estado": "activo"
+}
+
+### Cambiar estado
+PATCH http://127.0.0.1:8002/empleado/1/estado
+Content-Type: application/json
+
+{
+    "estado": "inactivo"
+}
+
+### Eliminar empleado
+DELETE http://127.0.0.1:8002/empleado/1
