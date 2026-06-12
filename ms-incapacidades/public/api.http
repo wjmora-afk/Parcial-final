@@ -1,0 +1,48 @@
+### Listar incapacidades
+GET http://127.0.0.1:8003/incapacidades
+
+### Ver incapacidad por ID
+GET http://127.0.0.1:8003/incapacidad/1
+
+### Buscar por empleado
+GET http://127.0.0.1:8003/incapacidades/empleado/1
+
+### Buscar por estado
+GET http://127.0.0.1:8003/incapacidades/estado/registrada
+
+### Buscar por tipo
+GET http://127.0.0.1:8003/incapacidades/tipo/enfermedad_general
+
+### Crear incapacidad
+POST http://127.0.0.1:8003/incapacidad
+Content-Type: application/json
+
+{
+    "empleado_id": 1,
+    "fecha_inicio": "2026-06-01",
+    "fecha_fin": "2026-06-05",
+    "tipo": "enfermedad_general",
+    "diagnostico_general": "Infeccion respiratoria",
+    "entidad_medica": "Clinica Central",
+    "observaciones": "Reposo medico",
+    "estado": "registrada"
+}
+
+### Modificar incapacidad
+PUT http://127.0.0.1:8003/incapacidad/1
+Content-Type: application/json
+
+{
+    "fecha_inicio": "2026-06-01",
+    "fecha_fin": "2026-06-07",
+    "observaciones": "Reposo medico extendido",
+    "estado": "en_revision"
+}
+
+### Cambiar estado
+PATCH http://127.0.0.1:8003/incapacidad/1/estado
+Content-Type: application/json
+
+{
+    "estado": "aprobada"
+}
