@@ -1,0 +1,30 @@
+### Listar seguimientos
+GET http://127.0.0.1:8004/seguimientos
+
+### Ver seguimiento por ID
+GET http://127.0.0.1:8004/seguimiento/1
+
+### Ver historial por incapacidad
+GET http://127.0.0.1:8004/seguimientos/incapacidad/1
+
+### Registrar seguimiento
+POST http://127.0.0.1:8004/seguimiento
+Content-Type: application/json
+
+{
+    "incapacidad_id": 1,
+    "fecha": "2026-06-11",
+    "comentario": "Incapacidad en revision por gestion humana",
+    "estado": "en_revision",
+    "usuario_responsable": "gestionhumana"
+}
+
+### Modificar seguimiento
+PUT http://127.0.0.1:8004/seguimiento/1
+Content-Type: application/json
+
+{
+    "comentario": "Incapacidad aprobada",
+    "estado": "aprobada",
+    "usuario_responsable": "admin"
+}
